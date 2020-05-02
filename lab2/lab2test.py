@@ -63,8 +63,8 @@ class CopyFromOneToAnotherDatabaseTest(PerformanceCases):
         self.mongodb1: NoSqlDatabase = None
 
     def before_tests(self):
-        self.mongodb2 = NoSqlDatabase(port=25002)
-        self.mongodb1 = NoSqlDatabase(port=25001)
+        self.mongodb2 = NoSqlDatabase(host='mongodb2', port=27017)
+        self.mongodb1 = NoSqlDatabase(host='mongodb1', port=27017)
 
         self.mongodb1.drop()
         self.mongodb2.drop()
@@ -97,5 +97,7 @@ mongodb2: {}
 
 
 if __name__ == '__main__':
+    print("Waiting for databases")
+    time.sleep(10)
     CopyFromOneToAnotherDatabaseTest().run()
     plt.show()

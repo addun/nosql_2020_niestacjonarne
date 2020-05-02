@@ -17,7 +17,7 @@ def create_record():
 
 
 class NoSqlDatabase:
-    def __init__(self, host='0.0.0.0', port='25001', *args, **kwargs):
+    def __init__(self, host='0.0.0.0', port='27017', *args, **kwargs):
         self._client = MongoClient('mongodb://{}:{}/'.format(host, port),
                                    username='root',
                                    password='password')

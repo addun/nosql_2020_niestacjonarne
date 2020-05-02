@@ -21,11 +21,11 @@ services:
       - 25002:27017
     networks:
       - internal
-#  python:
-#    build: .
-#    entrypoint: tail -f /dev/null
-#    networks:
-#      - internal
+  python:
+    build: .
+    entrypoint: tail -f /dev/null
+    networks:
+      - internal
 
 networks:
   internal:
