@@ -1,0 +1,32 @@
+version: "3.1"
+
+services:
+  mongodb1:
+    container_name: mongodb1
+    image: mongo:3.6.18
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+    ports:
+      - 25001:27017
+    networks:
+      - internal
+  mongodb2:
+    container_name: mongodb2
+    image: mongo:3.6.18
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+    ports:
+      - 25002:27017
+    networks:
+      - internal
+#  python:
+#    build: .
+#    entrypoint: tail -f /dev/null
+#    networks:
+#      - internal
+
+networks:
+  internal:
+    external: false

@@ -1,0 +1,31 @@
+version: "3.1"
+
+services:
+  mariadb:
+    container_name: mariadb
+    image: library/mariadb:10
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - 3306:3306
+    networks:
+      - internal
+  mongodb:
+    container_name: mongodb
+    image: mongo:3.6.18
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+    ports:
+      - 27017:27017
+    networks:
+      - internal
+  python:
+    build: .
+    entrypoint: tail -f /dev/null
+    networks:
+      - internal
+
+networks:
+  internal:
+    external: false

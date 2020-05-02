@@ -1,0 +1,77 @@
+\documentclass[12pt,oneside,a4paper]{book}
+\usepackage{graphicx}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+    \begin{titlepage}
+
+        \begin{center}
+            \vspace*{1cm}
+
+            \large{
+                \textbf{Testy wydajnościowe bazy danych}
+            }
+
+            \vspace{0.5cm}
+            Bazy danych NoSQL
+            \linebreak
+            niestacjonarne
+
+            \vspace{1.5cm}
+
+            \textbf{Adrian Bury}
+
+            \vfill
+
+            \includegraphics[width=0.4\textwidth]{opracowanie/images/logoup.jpg}
+
+        \end{center}
+    \end{titlepage}
+
+    \chapter*{Opracowanie}
+
+
+    \section*{Algorytm}
+
+    \begin{enumerate}
+        \item Sprawdzenie, czy wszystkie rekordy zostały przeniesione
+        \item Losowanie rekordu z bazy nr 1
+        \item Sprawdzenie, czy wylosowany rekord istnieje w bazie nr dwa
+        \item Jeżeli rekord istnieje w bazie nr 2 powrót do pkt. nr 1
+        \item Zapisanie rekordu do bazy nr 2
+    \end{enumerate}
+
+    Podczas wykonywania testu jest zliczana liczba operacji, jaka została wykonana na bazach danych
+    oraz czas wykonywania jednego przypadku testowego.
+
+    \section*{Przebieg testu wydajnościowego}
+
+    \begin{itemize}
+        \item W bazie oznaczonej nr 1 znajduje się 100 rekordów
+        \item Baza oznaczona nr 2 jest pusta
+        \item Test jest uruchamiany 10 razy
+    \end{itemize}
+
+    \section*{Wyniki}
+
+    Na zdjęciu został przedstawiony wykres obrazujący ilość operacji bazodanowych na sekundę w bazie typu
+    NoSQL o nazwie MongoDB przy zajętości liczącej sto rekordów.
+
+
+    \begin{center}
+        \makebox[\textwidth]{\includegraphics{opracowanie/images/result.png}}
+    \end{center}
+
+    \section*{Podsumowanie}
+    Baza danych MongoDB jest w stanie wykonać od 800 do 1 200 operacji na sekundę.
+    Ilość ta jest zależna od rodzaju wykonywanych operacji (zapisu, wyszukiwania, czytania).
+
+    \chapter*{Załączniki}
+    \begin{itemize}
+        \item Kod źródłowy:
+    \end{itemize}
+
+\end
+
+\end{document}
