@@ -21,6 +21,7 @@ services:
     networks:
       - internal
   python:
+    container_name: python
     build: .
     entrypoint: tail -f /dev/null
     networks:

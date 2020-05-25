@@ -29,7 +29,7 @@ def create_table() -> str:
 
 if __name__ == '__main__':
     with open("lab1.sql", "w+") as f:
-        n = 3
+        n = 5
         f.write(create_db() + "\n")
         f.write(use_db() + "\n")
         f.write(drop_table() + "\n")

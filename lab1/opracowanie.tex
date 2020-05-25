@@ -1,0 +1,84 @@
+\documentclass[12pt,oneside,a4paper]{book}
+\usepackage{graphicx}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+
+\begin{document}
+    \begin{titlepage}
+
+        \begin{center}
+            \vspace*{1cm}
+
+            \large{
+                \textbf{Komunikacja MariaDB - MongoDB}
+            }
+
+            \vspace{0.5cm}
+            Bazy danych NoSQL
+            \linebreak
+            niestacjonarne
+
+            \vspace{1.5cm}
+
+            \textbf{Adrian Bury}
+
+            \vfill
+
+            \includegraphics[width=0.4\textwidth]{images/logoup.jpg}
+
+        \end{center}
+    \end{titlepage}
+
+    \chapter*{Opracowanie}
+
+
+    \section*{Algorytm}
+
+    \begin{enumerate}
+        \item Uruchomienie serwisów
+        \item Zapełnienie bazy MariaDB
+        \item Skopiowanie tabeli z bazy MariaDB do bazy MongoDB
+    \end{enumerate}
+
+    \noindent
+    Podczas wykonywania testu jest zliczany czas potrzebny na
+    \begin{itemize}
+        \item pobranie elementów z bazy MariaDB
+        \item zapisanie elementów do bazy MongoDb
+    \end{itemize}
+
+    \section*{Przebieg testu wydajnościowego}
+
+    \begin{itemize}
+        \item W bazie MariaDB znajduje się 100 000 rekordów
+        \item Baza MongoDB jest pusta (nie są utworzone żadne kolekcje, ani dokumenty)
+        \item Test jest uruchamiany 3 razy
+    \end{itemize}
+
+    \section*{Wyniki}
+
+    W tabeli zostały przedstawione wyniki wykonanych testów.
+
+    \vspace{0.5cm}
+
+    \noindent
+    \begin{tabular}{ l | c | c | c | c }
+        Operacja dla 100 000 rekordów & Test nr 1 & Test nr 2 & Test nr 3 & Jednostka \\
+        \hline
+        Pobranie elementów (MariaDB) & 2.539 & 2.483 & 2.412 & [s] \\
+        Dodanie rekordów (MongoDB) & 40.152 & 40.114 & 40.209 & [s] \\
+    \end{tabular}
+
+    \section*{Wnioski}
+    Baza MariaDB jest w stanie wyciągnąć okokło 40 320 rekordów na sekundę.
+    MongoDB jest w stanie zapisywać około
+    2 500 rekordów na sekundę.
+
+    \chapter*{Załączniki}
+    \begin{itemize}
+        \item \href{https://github.com/addun/nosql_2020_niestacjonarne/tree/master/lab1}{Kod źródłowy}
+    \end{itemize}
+
+\end{document}

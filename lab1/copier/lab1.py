@@ -71,8 +71,6 @@ class NoSqlDatabase:
 
 
 if __name__ == '__main__':
-    print("Waiting for connections...")
-    time.sleep(10)
     sqlDatabase = SqlDatabase()
     print("Getting records from SQL database")
     start = time.time()
